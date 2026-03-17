@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://l6qsd05x-3000.asse.devtunnels.ms/";
+const siteUrl = "https://profile-band-metal.vercel.app/";
 const logoUrl = `${siteUrl}/logo.png`;
 const ogImage = `${siteUrl}/pussy-destroyer-og.png`;
 
