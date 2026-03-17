@@ -83,7 +83,7 @@ export default function About() {
           >
             <div className="relative w-full aspect-[4/5] overflow-hidden">
               <img
-                src="/about.jpg"
+                src="/About.jpg"
                 alt="About visual"
                 className="w-full h-full object-contain md:object-cover grayscale contrast-125 brightness-[0.5]"
               />
