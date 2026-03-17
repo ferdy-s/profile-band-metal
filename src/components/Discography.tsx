@@ -33,7 +33,7 @@ const release: Release = {
   title: "False Preacher",
   year: 2025,
   cover: "/album/false-preacher.png",
-  audio: "/audio/false-preacher.mp4",
+  audio: "/audio/False-Preacher.mp3",
   type: "Single",
   genre: "Deathcore",
   createdBy: "Pussy Destroyer",
