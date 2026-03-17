@@ -1,7 +1,6 @@
 # False Preacher | Official Band Website
 
 <img width="2879" height="1799" alt="image" src="https://github.com/user-attachments/assets/a6ea6627-e771-4003-9a86-93529f1c2946" />
-<img width="692" height="1483" alt="image" src="https://github.com/user-attachments/assets/2e552ce3-4ae3-49f6-93c6-a9cd0c2bd16e" />
 
 Sebuah website modern dengan pendekatan sinematik dan agresif yang dirancang untuk merepresentasikan identitas band deathcore secara digital.  
 Proyek ini menampilkan perpaduan antara visual yang kuat, narasi, dan pengalaman pengguna yang imersif.
