@@ -1,0 +1,302 @@
+/* =========================
+   METAL DESIGN SYSTEM
+========================= */
+
+/* ROOT VARIABLES */
+:root {
+  --metal-black: #050505;
+  --metal-red: #7f1d1d;
+  --metal-red-glow: #dc2626;
+  --metal-gray: #a1a1aa;
+}
+
+/* =========================
+   GLOBAL BASE
+========================= */
+
+body {
+  background: var(--metal-black);
+  color: #e5e5e5;
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.metal-title {
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+}
+
+.metal-subtitle {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--metal-gray);
+}
+
+/* =========================
+   NOISE OVERLAY
+========================= */
+
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("/noise.png");
+  opacity: 0.05;
+}
+
+/* =========================
+   SCANLINE EFFECT
+========================= */
+
+.scanline {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 2px,
+    black 3px
+  );
+}
+
+/* =========================
+   GLITCH EFFECT
+========================= */
+
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.6;
+}
+
+.glitch::before {
+  color: red;
+  transform: translate(2px, 0);
+  animation: glitchShift 0.3s infinite;
+}
+
+.glitch::after {
+  color: blue;
+  transform: translate(-2px, 0);
+  animation: glitchShift 0.3s infinite reverse;
+}
+
+@keyframes glitchShift {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(2px, -2px);
+  }
+  60% {
+    transform: translate(-1px, 1px);
+  }
+  80% {
+    transform: translate(1px, -1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* =========================
+   FLICKER TEXT
+========================= */
+
+.flicker {
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    opacity: 1;
+  }
+  20%,
+  24%,
+  55% {
+    opacity: 0.4;
+  }
+}
+
+/* =========================
+   BLOOD GLOW
+========================= */
+
+.blood-glow {
+  text-shadow:
+    0 0 5px var(--metal-red-glow),
+    0 0 15px var(--metal-red-glow),
+    0 0 30px var(--metal-red);
+}
+
+/* =========================
+   BRUTAL BUTTON
+========================= */
+
+.btn-metal {
+  border: 1px solid var(--metal-red);
+  padding: 10px 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.btn-metal:hover {
+  background: rgba(127, 29, 29, 0.3);
+  box-shadow: 0 0 10px var(--metal-red-glow);
+}
+
+/* =========================
+   CARD DISTORTION
+========================= */
+
+.distort {
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+}
+
+.distort:hover {
+  transform: scale(1.05) rotate(-0.5deg);
+  filter: contrast(120%) brightness(110%);
+}
+
+/* =========================
+   PARALLAX LAYER
+========================= */
+
+.parallax {
+  will-change: transform;
+  transition: transform 0.2s ease-out;
+}
+
+/* =========================
+   BORDER GLOW
+========================= */
+
+.border-glow {
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.border-glow:hover {
+  border-color: var(--metal-red);
+  box-shadow: 0 0 10px var(--metal-red-glow);
+}
+
+/* =========================
+   GRUNGE BACKGROUND
+========================= */
+
+.grunge-bg {
+  background:
+    radial-gradient(circle at center, rgba(255, 0, 0, 0.05), transparent),
+    url("/noise.png");
+}
+
+/* =========================
+   SCROLLBAR (CUSTOM)
+========================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--metal-red);
+}
+
+/* =========================
+   SELECTION COLOR
+========================= */
+
+::selection {
+  background: var(--metal-red);
+  color: white;
+}
+
+/* =========================
+   IMAGE HOVER GLITCH
+========================= */
+
+.img-glitch {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-glitch::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 0, 0, 0.1) 0px,
+    transparent 2px
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.img-glitch:hover::before {
+  opacity: 1;
+}
+
+/* =========================
+   TEXT STROKE (AGGRESSIVE)
+========================= */
+
+.stroke-text {
+  -webkit-text-stroke: 1px red;
+  color: transparent;
+}
+
+/* =========================
+   ANIMATED GRADIENT BLOOD
+========================= */
+
+.blood-bg {
+  background: linear-gradient(270deg, #000, #7f1d1d, #000);
+  background-size: 400% 400%;
+  animation: bloodFlow 8s ease infinite;
+}
+
+@keyframes bloodFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
