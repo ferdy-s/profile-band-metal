@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl = "https://profile-band-metal.vercel.app/";
+const siteUrl = "https://profile-band-metal.vercel.app";
 const logoUrl = `${siteUrl}/logo.png`;
-const ogImage = `${siteUrl}/pussy-destroyer-og.png`;
+const ogImage = `${siteUrl}/pussy-destroyer.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
